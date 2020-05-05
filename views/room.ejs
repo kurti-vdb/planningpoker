@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Planning poker - Room</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/room.css">
+    <link rel="stylesheet" href="css/navigation.css">
+</head>
+
+<body>
+
+    <%- include ('partials/navigation') %>
+
+    <div class="container flex">
+        <div class="left">
+            <div class="title">Team Members</div>
+            <div class="team-members css-scrollbar">
+                <ul id="people" class="people">
+                    <!-- Do not remove but uncomment this for debugging  - This is dummy data that will be replaced by javascript 
+                    <li class="person venus" data-chat="5d6d5d1c4063fc6afd092bb6" data-name="Helena">
+                        <img src="https://fwbmatch.fra1.digitaloceanspaces.com/5d6d5d1c4063fc6afd092bb6.jpg"
+                            alt="Helena">
+                        <div class="name">Helena</div>
+                        <time class="timeago time" datetime="2020-04-09T20:41:39.000Z">20 days ago</time>
+                        <span class="location">Hey, hoe ist…</span>
+                    </li>
+                    <li class="person venus" data-chat="5dee2fb8991de41a525f6b26" data-name="Ladyingreen">
+                        <img src="https://fwbmatch.fra1.digitaloceanspaces.com/venus.jpg" alt="Ladyingreen">
+                        <div class="name">Ladyingreen</div>
+                        <time class="timeago time" datetime="2020-01-09T22:38:31.000Z">4 months ago</time>
+                        <span class="location">Zin om de foto uploads…</span>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+
+            <div class="cards">
+                <div class="title"></div>
+
+                <div class="cardFace" data-vote-value="0">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">0</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cardFace" data-vote-value="1/2">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">1/2</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="1">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">1</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="2">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">2</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="3">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">3</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="5">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">5</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="8">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">8</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="13">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">13</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="20">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">20</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="40">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">40</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="100">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">100</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardFace" data-vote-value="?">
+                    <div class="pokercard">
+                        <div class="item top">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                        <h1 class="item">?</h1>
+                        <div class="item bottom">
+                            <svg class="" width="20" height="20" viewBox="0 0 20 20">
+                                <path class="pike"
+                                    d=" M 0 12  A 2.5 2.5 0 0 0 10 12  A 2.5 2.5 0 0 0 20 12 Q 16 4 10 0 Q 4 4 0 12">
+                                </path>
+                                <polygon class="pike" points="10 10, 13 20, 7 20"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% if (user.role == 'moderator') { %>
+            <button id="stop-voting" type="submit" class="show-result-btn blue-invert">Show result</button>
+            <button id="next-voting" type="submit" class="next-voting-btn blue-invert">Next voting</button>
+            <% } %>
+
+            <div class="vote-results">
+                <div class="title"></div>
+                <div class="chart-container">
+                    <canvas id="chart" width="200" height="200"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <%- include ('partials/footer') %>
+    <script src="/modules/chart.js/dist/Chart.min.js"></script>
+    <script src="/scripts/room.js"></script>
+
+
+</body>
+
+</html>

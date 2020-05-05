@@ -1,0 +1,205 @@
+.flex {
+    display: flex;
+}
+
+.left {
+    flex: 1;
+}
+
+.left .title {
+    color: #000;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 25px 0;
+    position: relative;
+}
+
+.left .title:after, .left .rooms:after, .left .search:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 80%;
+    height: 1px;
+    content: '';
+    background-color: #e6e6e6;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.left .team-members ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left .people .person {
+    position: relative;
+    width: 100%;
+    padding: 12px 10% 16px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.left .person img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.left .person .name {
+    font-size: 18px;
+    line-height: 22px;
+    color: #1a1a1a;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.left .person .time {
+    font-size: 12px;
+    position: absolute;
+    top: 8px;
+    right: 10%;
+    padding: 0 0 5px 5px;
+    color: #999;
+}
+
+.left .person .location {
+    font-size: 12px;
+    display: inline-block;
+    overflow: hidden !important;
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+    padding-left: 6px;
+}
+
+.left .people .person:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 80%;
+    height: 1px;
+    content: '';
+    background-color: #e6e6e6;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.left .person .voted, .left .person .not-voted {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    right: 40px;
+}
+
+.not-voted {
+    background-color: rgb(231, 229, 229);
+}
+.voted {
+    background-color : #00ccff;
+}
+
+
+.right{
+    flex: 2;
+    padding: 25px 75px;
+}
+
+.pokercard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardFace.selected {
+    
+    background: linear-gradient(135deg,#566373,#314865);
+    color: #fff;
+    box-shadow: 4px 6px 12px -1px #828282;
+    transform: scale(1.05);
+}
+
+.pokercard .item {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 33%;
+    width: 33%;
+    text-align: center;
+}
+.pokercard .top {
+    align-self: flex-start;
+}
+.pokercard .bottom {
+    align-self: flex-end;
+}
+
+.cardFace {
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 90px;
+    height: 126px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 0px #c4c4c4;
+    display: inline-flex;
+}
+.cardFace h1 {
+    font-size: 1.2rem;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    margin-right: 5px;
+}
+
+button:focus {outline:0;}
+
+.show-result-btn, .next-voting-btn {
+    margin: 35px 34%;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 40px;
+    /* background: #0cf; */
+    border: 2px solid #fff;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.next-voting-btn {
+    display: none;
+}
+
+.vote-results {
+    display: none;
+}
+.vote-value {
+    display: none;
+    position: absolute;
+    right: 40px;
+}
+
+.vote-results .chart-container {
+    padding: 0 100px;
+}

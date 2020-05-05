@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Planning poker</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="hold-transition lockscreen">
+
+    <div class="lockscreen-wrapper">
+        <div class="lockscreen-logo">
+            <a href="/" title="GEOIP DB ip location API"><b>Planning</b> Poker</a>
+        </div>
+        <div class="lockscreen-name"></div>
+
+
+        <div class="lockscreen-item">
+
+            <div class="lockscreen-image">
+                <img id="user" src="/images/logo-spades.png" alt="">
+            </div>
+
+            <form action="/room" method="post" class="lockscreen-credentials">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="name" name="username">
+                    <input type="hidden" name="email" value="">
+                    <input type="hidden" name="location" value="">
+                    <input type="hidden" id="city" name="city" value="">
+                    <input type="hidden" id="country" name="country" value="">
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+        <div class="help-block text-center">
+            Enter your name to join the room
+        </div>
+        <div class="text-center">
+
+        </div>
+        <div class="lockscreen-footer text-center">
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+    <script>
+
+        $.ajax({
+            url: "https://geolocation-db.com/jsonp",
+            jsonpCallback: "callback",
+            dataType: "jsonp",
+            success: function (location) {
+                console.log(location);
+                $('#country').prop('value', location.country_name);
+                $('#city').prop('value', location.city);
+            }
+        });
+
+        function acronym(sentence) {
+            var matches = sentence.match(/\b(\w)/g);
+            var acronym = matches.join('');
+
+            return acronym;
+        }
+
+        if ($('.initials').text() != '')
+            $('.initials').text(acronym($('.initials').text()));
+
+
+    </script>
+</body>
+
+</html>

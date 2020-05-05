@@ -1,0 +1,75 @@
+<div id="navigation">
+    <div class="container topbar">
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="https://fwbmatch.com">
+                <img class="logo" width="45" height="45" src="/images/logo.png" />
+                <span>PLANNING POKER</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div id="navbarNavDropdown" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                    <!--
+                    <li class="nav-item active flex">
+                        <a class="nav-link black" href="/blog">Blog</a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="nav topbar-right">
+
+            <li class="nav-item flex">
+                <a class="nav-link" href="/alerts">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                    <span class="badge badge-pill white">3</span>
+                </a>
+            </li>
+
+            <li class="nav-item flex">
+                <a class="nav-link" href="" id="mails-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span class="badge badge-pill white" id="counter-emails"></span>
+                </a>
+                <div class="dropdown-menu mails-dropdown" aria-labelledby="mails-dropdown">
+                    <h6>Mails</h6>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="/profile/:id" title="View my profile">
+                    <div class="lockscreen-image" id="">
+                        <img src="/images/avatars/<%= user.avatar %>" alt="" />
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item flex">
+                <span class="username" id="user" data-uid="<%= user.uid %>"><%= user.name %></span>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-angle-down" style="font-size:24px"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/aboutme">
+                        <span class="profile">About me</span>
+                    </a>
+                    <a class="dropdown-item" href="/preferences">Preferences</a>
+                    <a class="dropdown-item" href="/account">Account</a>
+                    <!--
+                        <a class="dropdown-item" href="/credits">Credits</a>
+                        <a class="dropdown-item" href="/professional">Professional</a>
+                        -->
+                    <a class="dropdown-item" href="/support">Help</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
