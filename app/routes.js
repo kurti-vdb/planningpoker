@@ -16,7 +16,7 @@ router.post("/room", function (req, res) {
 
     let role = "voter";
 
-    if (req.body.username.toLowerCase() === "jens" || req.body.username.toLowerCase() === "cedric" || req.body.username.toLowerCase() === "admin")
+    if (req.body["moderator"] == "on")
         role = "moderator";
 
     let user = {

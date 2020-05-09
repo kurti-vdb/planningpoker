@@ -44,7 +44,6 @@ module.exports = function (io) {
         socket.on('next-voting', function () {
 
             // 1. Reset all votes
-            //votes = [];
             votes.forEach(function (obj) {
                 obj.vote = null;
             });
