@@ -58,6 +58,8 @@ function populateUsers(users) {
     }
 }
 
+var chart = null;
+
 function showVoteResults(votes) {
 
     let response = prepareVotesForChart(votes)
@@ -69,7 +71,7 @@ function showVoteResults(votes) {
         chart.destroy();
     }
 
-    var chart = new Chart(ctx, {
+    chart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: response[0],
@@ -90,6 +92,8 @@ function showVoteResults(votes) {
             }
         }
     });
+
+    
 
     $(".cards, .show-result-btn, .voted").hide();
     $(".vote-results, .next-voting-btn, .vote-value").show();
