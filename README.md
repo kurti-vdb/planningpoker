@@ -1,0 +1,2 @@
+# planningpoker
+Node.js project
