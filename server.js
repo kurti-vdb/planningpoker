@@ -59,6 +59,5 @@ require("./app/controllers/socketcontroller")(io);
 
 // Launch app - Normally this would be app.listen(...), but since we're using socket.io, it is server.listen(...)
 server.listen(port, function () {
-    // In production run: LOG_LEVEL=info node server.js
     logger.info("(.)(.) server.js started on port " + port + " (.)(.)");
 });

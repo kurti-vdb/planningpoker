@@ -93,11 +93,8 @@ function showVoteResults(votes) {
         }
     });
 
-    
-
     $(".cards, .show-result-btn, .voted").hide();
     $(".vote-results, .next-voting-btn, .vote-value").show();
-
 }
 
 
